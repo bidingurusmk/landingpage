@@ -1,6 +1,7 @@
 
 import {beritaList} from "@/data/berita";
 import Link from "next/link";
+
 export default function Berita() {
   return (
     <>

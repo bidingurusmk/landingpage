@@ -1,10 +1,10 @@
 
 import {beritaList} from '@/data/berita';
-type Props = {
-  id: string
-};
-export default function DetailBerita({params}: {params: Props}) {
-  const {id} = params;
+type Props = Promise<{
+  id: string,
+}>;
+export default async function DetailBerita({params}:{params: Props}) {
+  const {id} = await params;
   const berita = beritaList.find((b) => b.id === id);
   return (
     <>
