@@ -47,6 +47,10 @@ export default function Sidebar({children, title}: SidebarProps) {
                     )
                 }
             <div className="text-2xl">{title}</div>
+            <div className="bg-[url('/images/gedung.jpg')] flex justify-center flex-col items-center bg-cover bg-center h-60 mt-4 rounded-md mx-5">
+                <h3 className="text-2xl">Selamat Datang Di Toko Bangunan Pencakar Langit</h3>
+                <h5>Kunjungi toko kami, kami siap melayani</h5>
+            </div>
             <div className="mt-8">
                 {children}        
             </div>
