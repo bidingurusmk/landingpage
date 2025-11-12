@@ -11,7 +11,7 @@ export default function Sidebar({children, title}: SidebarProps) {
     return (
         <>
             <div className="bg-red-500 text-white flex justify-center p-4">
-                <div className={"hidden md:inline"}>
+                <div className="hidden md:inline">
                     <Link href="/" className="p-4 hover:bg-red-200 hover:text-black transition-colors duration-300 
                     ease-in-out text-2xl font-bold">Home</Link> 
                     <Link href="/profil" className="p-4 hover:bg-red-200 hover:text-black text-2xl font-bold ml-4">
@@ -22,17 +22,30 @@ export default function Sidebar({children, title}: SidebarProps) {
                     </Link>
                 </div>
                 {isOpen ? (
-                    <button onClick={() => setIsOpen(false)} className="md:hidden absolute right-6 top-5 
-                    text-2xl font-bold">
-                        Close
+                    <button onClick={() => setIsOpen(false)} className="md:hidden absolute right-6 top-2 
+                    text-sm font-bold">
+                        X
                     </button>
                 ):(
-                    <button onClick={() => setIsOpen(true)} className="md:hidden absolute right-6 top-5 
-                    text-2xl font-bold">
+                    <button onClick={() => setIsOpen(true)} className="md:hidden absolute right-6 top-2 
+                    text-sm font-bold">
                         Menu
                     </button>
                 )}
             </div>
+            {isOpen && (
+                <div className="md:hidden">
+                    <div className="bg-red-500 text-white flex flex-col p-4">
+                        <Link href="/" className="p-4 hover:bg-red-200 hover:text-black transition-colors duration-300 
+                        ease-in-out text-2xl font-bold">Home</Link> 
+                        <Link href="/profil" className="p-4 hover:bg-red-200 hover:text-black transition-colors duration-300 
+                        ease-in-out text-2xl font-bold ">Profil</Link> 
+                        <Link href="/berita" className="p-4 hover:bg-red-200 hover:text-black transition-colors duration-300 
+                        ease-in-out text-2xl font-bold">Berita</Link>
+                    </div>
+                </div>
+                    )
+                }
             <div className="text-2xl">{title}</div>
             <div className="mt-8">
                 {children}        
